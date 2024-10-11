@@ -19,12 +19,12 @@ import {
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBdD3Glr5jEhMaE5bwf4DkjA49LnizOL4I",
-  authDomain: "diario-digital-b5eaa.firebaseapp.com",
-  projectId: "diario-digital-b5eaa",
-  storageBucket: "diario-digital-b5eaa.appspot.com",
-  messagingSenderId: "175265304764",
-  appId: "1:175265304764:web:bd129614364c93ef4680b9",
+  apiKey: "AIzaSyAtusA2GL8S3zipfYwjNuDT7kvAqQSKwgo",
+  authDomain: "diario-digital-210e8.firebaseapp.com",
+  projectId: "diario-digital-210e8",
+  storageBucket: "diario-digital-210e8.appspot.com",
+  messagingSenderId: "25577141208",
+  appId: "1:25577141208:web:27b0f509c419302c86b8ad"
 };
 
 // Initialize Firebase
@@ -35,8 +35,8 @@ export const auth = getAuth(app);
 export const db = getFirestore();
 
 // Operaciones CRUD
-export const createTask = (title, description) =>
-  addDoc(collection(db, "tasks"), { title, description });
+export const createTask = (title, description, userName, userImage) =>
+  addDoc(collection(db, "tasks"), { title, description, userName, userImage });
 
 export const onGetTask = (callback) =>
   onSnapshot(collection(db, "tasks"), callback);
@@ -47,3 +47,4 @@ export const updateTask = (id, newData) =>
   updateDoc(doc(db, "tasks", id), newData);
 
 export const deleteTask = (id) => deleteDoc(doc(db, "tasks", id));
+
